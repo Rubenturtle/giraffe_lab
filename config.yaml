@@ -1,0 +1,32 @@
+
+### `config.yaml`
+```yaml
+# Configuration file for the Satellite Image Classification Project
+
+data:
+  raw_dir: "data/raw"            # Directory for raw satellite images
+  processed_dir: "data/processed" # Directory for processed images
+  augmented_dir: "data/augmented" # Directory for augmented images
+  image_size: [256, 256]         # Image dimensions for training
+  classes:
+    - "Urban"
+    - "Forest"
+    - "Water"
+    - "Agriculture"
+    - "Barren"
+
+model:
+  learning_rate: 0.001            # Learning rate for the optimizer
+  batch_size: 32                   # Number of samples per gradient update
+  epochs: 20                       # Number of epochs for training
+  dropout_rate: 0.5               # Dropout rate for regularization
+
+training:
+  validation_split: 0.2           # Fraction of data to reserve for validation
+  early_stopping: true             # Enable early stopping during training
+  save_model: true                 # Save the model after training
+
+logging:
+  log_dir: "logs/"                # Directory for saving training logs
+  log_level: "INFO"               # Logging level (DEBUG, INFO, WARNING, ERROR)
+
